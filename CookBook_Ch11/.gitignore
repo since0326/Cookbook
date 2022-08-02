@@ -1,0 +1,8 @@
+/.vs
+/DerivedDataCache
+/Intermediate
+/Saved
+/Build
+/Pluins
+*.sln
+*_BuiltData.uasset
