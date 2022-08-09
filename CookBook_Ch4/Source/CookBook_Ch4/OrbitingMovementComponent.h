@@ -1,0 +1,37 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Components/SceneComponent.h"
+#include "OrbitingMovementComponent.generated.h"
+
+
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class COOKBOOK_CH4_API UOrbitingMovementComponent : public USceneComponent
+{
+	GENERATED_BODY()
+
+public:
+	// Sets default values for this component's properties
+	UOrbitingMovementComponent();
+
+protected:
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
+public:
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Speed)
+		bool RotateToFaceoutwards;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Speed)
+		float RotationSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Speed)
+		float OrbitDistance;
+
+	float CurrentValue;
+
+	int32 testVale;
+};
